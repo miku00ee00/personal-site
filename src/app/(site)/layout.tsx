@@ -5,6 +5,7 @@ import { DeskShell } from "./_components/desk-shell.component";
 
 import "lenis/dist/lenis.css";
 import "./reset.css";
+import "#design/stylex.css";
 
 export const metadata: Metadata = {
   title: "miku00ee00 — The little nest",
