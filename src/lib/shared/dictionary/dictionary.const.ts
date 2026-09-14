@@ -53,7 +53,7 @@ export const defaultDictionary = {
     linkCardHint: "Paste a URL to preview a website",
   },
   meta: {
-    siteTitle: "miku00ee00's Little Nest",
+    siteTitle: "The Little Nest",
     siteDescription: "A place where technology and life intersect.",
   },
   common: {

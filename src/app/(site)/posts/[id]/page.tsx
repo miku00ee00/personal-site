@@ -19,9 +19,9 @@ import { ArticleToc } from "./_components/article-toc.component";
 type Props = Readonly<{ params: Promise<{ id: string }> }>;
 export async function generateMetadata({ params }: Props) {
   const post = await readPublicPost((await params).id);
-  if (!post) return { title: "Post not found — miku00ee00" };
+  if (!post) return { title: "Post not found" };
   return {
-    title: `${post.title} — miku00ee00`,
+    title: post.title,
     description: documentText(post.content).slice(0, 160),
   };
 }
