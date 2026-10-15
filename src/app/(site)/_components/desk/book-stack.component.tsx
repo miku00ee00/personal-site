@@ -26,7 +26,7 @@ export function BookStack({
           <span {...stylex.props(styles.bookmark)} />
         </span>
       </DeskLink>
-      <ObjectFeedback navigable label={name} xstyle={styles.bookFrame} />
+      <ObjectFeedback label={name} xstyle={styles.bookFrame} />
     </div>
   );
 }

@@ -67,6 +67,9 @@ exist only in page memory. Audio processing runs independently: browser uploads
 must finish before leaving, but server jobs continue. Playlist edits publish on
 save; removing an entry does not delete its recording.
 
+On the public desk, only the posts and thoughts links show object labels. The
+front note sheet and coffee cup move on hover, respecting reduced-motion settings.
+
 Files use the public `files` bucket, unique paths, and server-issued signed upload
 tokens, with a 50 MiB limit. JPEG, PNG, and WebP uploads are compressed to WebP
 (1920px maximum, 2 MB target); other bytes are preserved. File URLs remain public

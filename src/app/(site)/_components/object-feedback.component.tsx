@@ -6,11 +6,9 @@ import type { StyleInput } from "#design/style.type";
 import { feedback } from "../_design/object-feedback.stylex";
 export function ObjectFeedback({
   label,
-  navigable = false,
   xstyle,
 }: Readonly<{
   label: string;
-  navigable?: boolean;
   xstyle?: StyleInput;
 }>) {
   return (
@@ -21,7 +19,7 @@ export function ObjectFeedback({
     >
       <span {...stylex.props(feedback.label)}>
         {label}
-        {navigable && <LinkIcon size={11} aria-hidden />}
+        <LinkIcon size={11} aria-hidden />
       </span>
     </span>
   );

@@ -193,10 +193,12 @@ export const media = stylex.defineConsts({
   displayNarrow: "@container desk-display (max-width: 359px)",
   tocWide: "@media (min-width: 1280px)",
   touch: "@media (hover: none)",
+  hover: "@media (hover: hover) and (pointer: fine)",
   phone: "@media (max-width: 600px)",
   tablet: "@media (min-width: 601px) and (max-width: 1023px)",
   compact: "@media (max-width: 1023px)",
   reduce: "@media (prefers-reduced-motion: reduce)",
+  motion: "@media (prefers-reduced-motion: no-preference)",
 });
 export const motionToken = stylex.defineConsts({
   displayLayer: "3",

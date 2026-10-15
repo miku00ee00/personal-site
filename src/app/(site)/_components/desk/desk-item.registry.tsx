@@ -29,7 +29,6 @@ export function renderDeskItem(
     case "display":
       return (
         <RetroComputer
-          name={item.name}
           programs={{
             terminal: <DisplayTerminal lines={item.config.terminalLines} />,
             stats: services.stats,

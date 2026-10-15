@@ -17,6 +17,23 @@ export const styles = stylex.create({
     position: "relative",
     width: "100%",
     paddingBottom: "4px",
+  },
+  letterFront: {
+    position: "relative",
+    transformOrigin: "75% 12%",
+    transform: {
+      default: "none",
+      [media.motion]: {
+        default: null,
+        [media.hover]: {
+          default: null,
+          [stylex.when.ancestor(":hover", objectMarker)]:
+            "translate(-2px, -4px) rotate(-2deg)",
+        },
+        [stylex.when.ancestor(":has(:focus-visible)", objectMarker)]:
+          "translate(-2px, -4px) rotate(-2deg)",
+      },
+    },
     transitionProperty: "transform",
     transitionDuration: { default: motionToken.slow, [media.reduce]: "0s" },
     transitionTimingFunction: motionToken.ease,
@@ -30,11 +47,16 @@ export const styles = stylex.create({
     backgroundColor: material.paperEdge,
     transform: {
       default: "rotate(2deg)",
-      [stylex.when.ancestor(":hover", objectMarker)]:
-        "translate(4px, 2px) rotate(4deg)",
-      [stylex.when.ancestor(":focus-visible", objectMarker)]:
-        "translate(4px, 2px) rotate(4deg)",
-      [media.reduce]: "rotate(2deg)",
+      [media.motion]: {
+        default: null,
+        [media.hover]: {
+          default: null,
+          [stylex.when.ancestor(":hover", objectMarker)]:
+            "translate(4px, 2px) rotate(4deg)",
+        },
+        [stylex.when.ancestor(":has(:focus-visible)", objectMarker)]:
+          "translate(4px, 2px) rotate(4deg)",
+      },
     },
     transitionProperty: "transform",
     transitionDuration: { default: motionToken.slow, [media.reduce]: "0s" },

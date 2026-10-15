@@ -1,6 +1,14 @@
 import * as stylex from "@stylexjs/stylex";
 
-import { shadow, shape, material } from "#design/tokens.stylex";
+import {
+  shadow,
+  shape,
+  material,
+  media,
+  motionToken,
+} from "#design/tokens.stylex";
+
+import { objectMarker } from "../../_design/object-feedback.stylex";
 
 export const styles = stylex.create({
   coffee: {
@@ -16,6 +24,24 @@ export const styles = stylex.create({
     borderRadius: shape.round,
     backgroundImage: material.saucer,
     boxShadow: shadow.lifted,
+  },
+  vessel: {
+    position: "absolute",
+    inset: 0,
+    transformOrigin: "44.4827% 48.8462%",
+    transform: {
+      default: "rotate(0deg)",
+      [media.motion]: {
+        default: null,
+        [media.hover]: {
+          default: null,
+          [stylex.when.ancestor(":hover", objectMarker)]: "rotate(8deg)",
+        },
+      },
+    },
+    transitionProperty: "transform",
+    transitionDuration: { default: motionToken.slow, [media.reduce]: "0s" },
+    transitionTimingFunction: motionToken.ease,
   },
   handle: {
     position: "absolute",

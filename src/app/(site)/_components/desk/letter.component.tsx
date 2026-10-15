@@ -14,17 +14,19 @@ export function Letter({
   return (
     <div {...stylex.props(styles.letter, objectMarker)}>
       <span {...stylex.props(styles.letterUnder)} />
-      <DeskLink
-        href="/thoughts"
-        aria-label="Read thoughts"
-        {...stylex.props(foundation.objectLink, styles.letterSheet)}
-      >
-        <span {...stylex.props(styles.letterHeader)}>{config.heading}</span>
-        <span {...stylex.props(styles.letterCopy)}>{config.body}</span>
-        <span {...stylex.props(styles.signature)}>{config.signature}</span>
-      </DeskLink>
-      <span {...stylex.props(styles.clip)} aria-hidden="true" />
-      <ObjectFeedback navigable label={name} xstyle={styles.letterFrame} />
+      <div {...stylex.props(styles.letterFront)}>
+        <DeskLink
+          href="/thoughts"
+          aria-label="Read thoughts"
+          {...stylex.props(foundation.objectLink, styles.letterSheet)}
+        >
+          <span {...stylex.props(styles.letterHeader)}>{config.heading}</span>
+          <span {...stylex.props(styles.letterCopy)}>{config.body}</span>
+          <span {...stylex.props(styles.signature)}>{config.signature}</span>
+        </DeskLink>
+        <span {...stylex.props(styles.clip)} aria-hidden="true" />
+      </div>
+      <ObjectFeedback label={name} xstyle={styles.letterFrame} />
     </div>
   );
 }

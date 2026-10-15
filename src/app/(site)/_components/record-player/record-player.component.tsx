@@ -14,11 +14,7 @@ import {
 import type { AudioTrack } from "#lib/shared/audio/audio.schema";
 
 import { foundation } from "../../_design/foundation.style";
-import {
-  objectMarker,
-  recordMarker,
-} from "../../_design/object-feedback.stylex";
-import { ObjectFeedback } from "../object-feedback.component";
+import { recordMarker } from "../../_design/object-feedback.stylex";
 import { RecordControls } from "./record-controls.component";
 import { RecordSpectrum } from "./record-spectrum.component";
 import { useRecordPlayer } from "./use-record-player.hook";
@@ -140,7 +136,6 @@ const styles = stylex.create({
   },
 });
 function RecordDeck({
-  name,
   playing = false,
   active = false,
   toggle,
@@ -148,7 +143,6 @@ function RecordDeck({
   children,
   statusId,
 }: Readonly<{
-  name: string;
   playing?: boolean;
   active?: boolean;
   toggle?: () => void;
@@ -158,12 +152,11 @@ function RecordDeck({
 }>) {
   return (
     <div {...stylex.props(styles.deck)}>
-      <div {...stylex.props(styles.platter, objectMarker)}>
-        <ObjectFeedback label={name} />
+      <div {...stylex.props(styles.platter)}>
         {spectrum}
         <button
           type="button"
-          {...stylex.props(styles.button)}
+          {...stylex.props(styles.button, foundation.focus)}
           aria-label={
             toggle
               ? active
@@ -204,13 +197,13 @@ export function RecordPlayer(props: RecordProps) {
         {...stylex.props(styles.root, recordMarker)}
         aria-label={props.name}
       >
-        <RecordDeck name={props.name} />
+        <RecordDeck />
         <p {...stylex.props(styles.empty)}>No recordings yet.</p>
       </section>
     );
   return <PlayableRecordPlayer {...props} />;
 }
-function PlayableRecordPlayer({ name, tracks: playlist }: RecordProps) {
+function PlayableRecordPlayer({ tracks: playlist }: RecordProps) {
   const player = useRecordPlayer(playlist);
   const { track } = player;
   const playing = player.state === "playing";
@@ -228,7 +221,6 @@ function PlayableRecordPlayer({ name, tracks: playlist }: RecordProps) {
       data-playing={playing}
     >
       <RecordDeck
-        name={name}
         playing={playing}
         active={player.active}
         toggle={player.toggle}

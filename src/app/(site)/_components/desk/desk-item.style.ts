@@ -183,7 +183,7 @@ export const itemStyles = stylex.create({
     alignSelf: "end",
     justifySelf: "start",
     zIndex: 0,
-    pointerEvents: "none",
+    pointerEvents: "auto",
     left: {
       default: "63%",
       [media.deskShort]: "67%",

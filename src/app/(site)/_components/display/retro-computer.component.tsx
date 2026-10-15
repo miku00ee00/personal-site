@@ -14,8 +14,6 @@ import {
 } from "#design/tokens.stylex";
 
 import { foundation } from "../../_design/foundation.style";
-import { objectMarker } from "../../_design/object-feedback.stylex";
-import { ObjectFeedback } from "../object-feedback.component";
 import { DeskClock } from "./desk-clock.component";
 import { displayPrograms } from "./display-content.const";
 import type { DisplayProgram } from "./display-content.schema";
@@ -122,18 +120,13 @@ const styles = stylex.create({
 });
 export function RetroComputer({
   programs,
-  name,
 }: Readonly<{
   programs: Readonly<Record<DisplayProgram, ReactNode>>;
-  name: string;
 }>) {
   const [program, setProgram] = useAtom(displayProgramAtom);
   const panelId = useId();
   return (
-    <section
-      aria-label="Desk display"
-      {...stylex.props(styles.root, objectMarker)}
-    >
+    <section aria-label="Desk display" {...stylex.props(styles.root)}>
       <div {...stylex.props(styles.screen)}>
         <DeskClock />
         <div {...stylex.props(styles.viewport)}>
@@ -186,7 +179,6 @@ export function RetroComputer({
           ))}
         </fieldset>
       </div>
-      <ObjectFeedback label={name} />
     </section>
   );
 }
