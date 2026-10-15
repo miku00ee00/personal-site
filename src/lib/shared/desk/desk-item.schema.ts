@@ -55,9 +55,9 @@ export const deskItemDefinitions = {
     defaultConfig: {
       name: "miku00ee00",
       greeting: "Hi there",
-      role: "A programmer, a gamer, and a curious learner.",
+      role: "A little about life, as it happens.",
       introduction:
-        "I write code, collect little moments, and occasionally turn them into words. This is my small corner of the internet — a place to think out loud and leave a few things behind.",
+        "There’s no particular theme here. Just a few stories, passing thoughts, and things I don’t want to forget. Stay for a while, or drop by another day.",
       links: { github: null, email: null, x: null, bilibili: null },
     },
   },

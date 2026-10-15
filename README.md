@@ -185,4 +185,4 @@ verify the module-loading constraint.
 Code is [GPL-3.0-only](./LICENSE); BlockNote multi-column uses its GPL-3.0 option.
 Dependencies and media retain their licenses; posts, photographs, and other
 authored content are outside the software license. Corresponding source:
-[muyu258/personal-site](https://github.com/muyu258/personal-site).
+[miku00ee00/personal-site](https://github.com/miku00ee00/personal-site).
